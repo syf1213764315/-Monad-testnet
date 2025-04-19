@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😎 Monad TestNet Airdrop</title>
+    <style>
+        /* Light mode default styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            transition: color 0.3s;
+        }
+        a {
+            display: block;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 5px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 14px;
+            border: 1px solid #ddd;
+        }
+        .copy-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background: #218838;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        .container.dark-mode {
+            background: #1e1e1e;
+        }
+        h1.dark-mode, h2.dark-mode {
+            color: #f4f4f4;
+        }
+        a.dark-mode {
+            background: #333;
+            color: white;
+        }
+        a.dark-mode:hover {
+            background: #d04848;
+        }
+        pre.dark-mode {
+            background: #333;
+            color: white;
+            border-color: #444;
+        }
+        .copy-btn.dark-mode {
+            background: #28a745;
+        }
+        .copy-btn.dark-mode:hover {
+            background: #218838;
+        }
+
+        /* Styling the specific "Daily check-in" section */
+        .daily-tasks-section a {
+            background: #007bff;
+            color: white;
+        }
+        .daily-tasks-section a:hover {
+            background: #0056b3;
+        }
+        
+        /* Dark mode toggle button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .dark-mode-toggle:hover {
+            background: #d1d5da;
+        }
+        .dark-mode .dark-mode-toggle {
+            background: #28a745;  /* Green button in dark mode */
+        }
+        .dark-mode .dark-mode-toggle:hover {
+            background: #91e1a2; /* Darker green hover in dark mode */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+        <!-- Daily check-in or Daily tasks projects -->
+        <h2 class="daily-tasks-section">Daily check-in or Daily tasks projects</h2>
+        <a href="https://testnet.humanity.org/login" target="_blank">
+            <img src="https://testnet.humanity.org/img/logo.0719f493.png" alt="humanity protocol" height="25">
+        </a>
+       
+        <a href="https://testnet.app.sunriselayer.io/" target="_blank">
+            <img src="https://raw.githubusercontent.com/sunriselayer/brand-kit/main/color.svg" alt="Sunrise protocol" width="30" height="18">
+            Sunrise Protocol
+        </a>
+        <a href="https://testnet.openledger.xyz/dashboard" target="_blank">
+            <img src="https://testnet.openledger.xyz/logo.png" alt="Open ledger" height="25">
+        </a>
+        <!--<a href="https://dashboard.layeredge.io/" target="_blank">💰 LayerEdge Daily Claim</a>
+        <a href="https://legends.saharalabs.ai/" target="_blank">
+            <img src="data:image/png;base64,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" height="25">-->
+        </a>
+        <a href="https://earn.taker.xyz/" target="_blank">
+            <img src="https://earn.taker.xyz/_next/static/media/header-logo.f1919033.svg" alt="Taker Protocol" height="25">
+        </a>
+        <a href="https://www.exospirits.com/exogame" target="_blank">
+            <img src="https://www.exospirits.com/_next/image?url=%2Fassets%2Flogo_exo_purple.png&w=1080&q=75" width="99" ><!--Exosprits--> Every 1hr 30 min</a>
+        <a href="https://dapp.fractionai.xyz/" target="_blank">
+            <img src="https://fractionai.xyz/_next/static/media/FractionAILogoWhite.d0016079.svg" alt="fractionai" height="20">
+        </a>
+        <a href="https://www.magicnewton.com/portal" target="_blank">
+            <img src="https://www.magicnewton.com/portal/newton.svg" alt="" height="20">  Magic Newton Portal</a>
+        <a href="https://hey.xyz/" target="_blank">
+            <img src="https://hey-assets.b-cdn.net/images/app-icon/0.png" alt="Hey Lens" width="15" height="15">
+            Lens Protocol (Hey.xyz)
+        </a>       
+        <a href="https://testnet.plaza.finance/" target="_blank">
+            <img src="https://testnet.plaza.finance/plaza-finance.svg" alt="Plaza Finance Testnet" width="20" height="15">
+            Plaza Finance Testnet (Testnet Concluded Deposits are live on Base network)
+        </a>
+        <a href="https://app-testnet-v3.yala.org/welcome/" target="_blank">
+            <img src="https://app-testnet-v3.yala.org/assets/header/Vector.svg" height="25">
+        </a>
+
+        <h1>Monad TestNet Airdrop 🪂</h1>
+
+        <!-- Faucet Section -->
+        <h2>🛠️ Monad TestNet Faucets</h2>
+        <a href="https://testnet.monad.xyz/" target="_blank">✅ Official Monad Faucet</a>
+        <a href="https://faucet.trade/monad-testnet-mon-faucet" target="_blank">💧 Trade Monad Faucet</a>
+        <a href="https://faucet.morkie.xyz/monad" target="_blank">🐶 Morkie Faucet (Mint Morkie ID First)</a>
+        <a href="https://www.gas.zip/faucet/monad" target="_blank">⛽ Gas Zip Faucet</a>
+        <a href="https://stake.apr.io/faucet" target="_blank">📈 Apriori Staking Faucet</a>
+        <a href="https://app.mozi.finance/" target="_blank">Mozi Wallet</a>
+        <a href="https://owlto.finance/Faucet/Monad" target="_blank">
+            <img src="https://owlto.finance/assets/Owlto_Light-27b3ec0a.png" alt="Owlto Finance" width="110" height="20">
+            
+        </a>
+        <a href="https://thirdweb.com/monad-testnet">Third web Monad Testnet 💧
+        </a>
+        <a href="https://faucet.nerzo.xyz/" target="_blank">
+            <img src="https://faucet.nerzo.xyz/_next/image?url=%2Fimages%2Flogo.webp&w=640&q=100" alt="nerzo" width="100">
+        </a>
+         <!--Discord Faucet Section-->
+        
+         <h3>╰┈➤<img src="https://img.icons8.com/?size=100&id=30998&format=png&color=000000" width="19">『Discord Faucet Section』 </h3>
+    
+        <a href="https://discord.com/invite/ZXQbQ9ACen" target="_blank">
+            <img src="https://img-cdn.magiceden.dev/rs:fill:400:0:0/plain/https%3A%2F%2Fimg.reservoir.tools%2Fimages%2Fv2%2Fmonad-testnet%2FxGIQsppdhx9jPELiWEASU2LsiUBmfVp%252Bclc%252FufPLbAeZkbIIdMQWrND1kpiC3Zk8zWq2JjL6qDi744rf32gJVkoTZHCY4Fnn2gJQE1HXisROCnXe7vJKXw2VBy6iBo3w52uDTQmyUfrVQFf32ONuZw%253D%253D" width="30">Overnads</a>
+        <a href="https://discord.com/invite/zf9WnwSZ" target="_blank">BlockVision's Server</a>
+        <a href="https://discord.com/invite/monadsters" target="_blank">
+            <img src="https://img-cdn.magiceden.dev/rs:fill:400:0:0/plain/https%3A%2F%2Fimg.reservoir.tools%2Fimages%2Fv2%2Fmonad-testnet%2Fi9YO%252F4yHXUdJsWcTqhqvf9newpCRn5hxMbMd%252BKn6FLn%252FPLTukEDRlJ0HEkula7skxwtiV64p%252BmcRSfaFg%252BOH7qvcRRkvQQcRdlRRMl5PNp%252B7JzYhRFBKGmTQHQsLRB8s" height="30">  Monadsters</a>
+        <h2>MONAD Testnet Explorer</h2>
+        <a href="https://monad-testnet.socialscan.io/" target="_blank">
+            <img src="https://storage.googleapis.com/influencer-272204.appspot.com/public/internal-tools/1732175815126/26693.png" alt="Monad Testnet" width="110" height="20">
+        </a>
+        <a href="https://testnet.monadexplorer.com/" target="_blank">
+           <img src="./assets/monad explorer.png" height="30">
+        </a>
+
+       
+       
+         <!-- DeFi Section -->
+         <h2>🌟 DeFi & DEX Platforms</h2>
+         <a href="https://swap.bean.exchange/" target="_blank">🔄 Bean Exchange</a>
+         <a href="https://bebop.xyz/trade?network=monad&sell=MON" target="_blank">📈 Bebop Trading</a>
+         <a href="https://www.kuru.io/trade" target="_blank">📊 Kuru Exchange</a>
+         <a href="https://monad-test.kinza.finance" target="_blank">💵 Kinza Finance</a>
+ 
+         <!-- NFT Marketplaces -->
+         <h2>🎨 NFT Marketplaces</h2>
+         <a href="https://magiceden.io/launchpad/monad-testnet/emmy_on_monad" target="_blank">🎨 Magic Eden NFT</a>
+         <a href="https://www.monadverse.land/mint" target="_blank">🏞️ MonadVerse Land Minting</a>
+       
+         <!-- Funding Projects -->
+         <h2>💰 Funding Projects</h2>
+         <a href="http://monad.ambient.finance" target="_blank">🌊 Ambient Finance ($6.6M Raised)</a>
+         <a href="http://magmastaking.xyz" target="_blank">🔥 Magma Staking ($3.9M Raised)</a>
+         <a href="http://apr.io" target="_blank">📈 Apriori Labs ($10M Raised)</a>
+         <a href="http://kintsu.xyz" target="_blank">⚡ Kintsu XYZ ($4M Raised)</a>
+         <a href="http://kuru.io/markets" target="_blank">🪙 Kuru Exchange ($2M Raised)</a>
+         <a href="https://monad.curvance.com/leaderboard/referrals?referral=hjwMkwcHR" target="_blank">🔄 Curvance ($3.6M Raised)</a>
+ 
+         <!-- Suggested Projects -->
+         <h2>🔥 Suggested Projects</h2>
+         <a href="https://monad.fantasy.top?ref=WWQLKQNK" target="_blank">🎮 Fantasy Top</a>
+         <a href="https://testnet.nad.fun/ref/TY0PWI" target="_blank">
+            <img src="https://testnet.nad.fun/_next/static/media/nads-fun.53545e6d.png" height="30">
+         </a>
+         <a href="http://rarelink.rarebetsports.io" target="_blank">⚽ RareBet Sports</a>
+         <a href="http://kizzy.io" target="_blank">📱 Kizzy Mobile</a>
+         <a href="https://townesquare.xyz/onboard/townes" target="_blank">TownesSquare</a>
+         <a href="https://testnet-preview.monorail.xyz/" target="_blank">
+            <img src="https://testnet-preview.monorail.xyz/logo.png" width="100" height="20">
+         </a>
+         <a href="https://pandaria.lfj.gg/"target="_blank">
+            <img src="https://pandaria.lfj.gg/static/media/lfg_logo_dark_3x.29f799d667f6f5f17f26.webp" alt="pandaria" width="90" height="40">
+         </a>
+         <a href="https://testnet.rubic.exchange/?fromChain=MONAD_TESTNET&toChain=MONAD_TESTNET&from=MON&to=USDT" target="_blank">
+            <img src="https://testnet.rubic.exchange/assets/images/rubic-logo.png" width="100" height="30">
+         </a>
+         <a href="https://dex.dirol.network/swap" target=""_blank">
+            <img src="https://dex.dirol.network/_next/static/media/logo.7f64469f.png" width="100" height="20">
+         </a>
+         <a href="https://app.uniswap.org/swap" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Uniswap_Logo_and_Wordmark.svg/1280px-Uniswap_Logo_and_Wordmark.svg.png" height="35">
+         </a>
+
+         <h2>Newly Added Projects</h2>
+         <a href="https://madness.finance/exp?ref=7SN6CQ" target="_blank">
+            <img src="./assets/image.png" height="30"></a>
+         <a href="https://app.crystal.exchange/swap" target="_blank">
+            <img src="https://app.crystal.exchange/assets/logo_clear-DLlVD8vP.png" height="25">    Crystal Exchange</a>
+         <a href="https://app.hashflow.com" target="_blank">
+            <img src="./assets/hashflow.png" height="25"> Hashflow</a>
+         <a href="https://alpha.izumi.finance" target="_blank">
+            <img src="https://developer.izumi.finance/_static/logo.png" height="22"> Finance</a>
+         <a href="https://bima.money/vaults" target="_blank">
+            <img src="https://bima.money/_next/static/media/Bima_logo.5de7a707.svg"></a>        
+         <a href="https://testapp.nitrofinance.xyz" target="_blank">
+            <img src="https://testapp.nitrofinance.xyz/_next/static/media/Logo 2.1167ad47.svg">    Nitro Finance</a>
+         <a href="https://opals.io/account/collection" target="_blank">Opals</a>
+
+         <!-- Contract Deployment -->
+         <h2>🔗 Contract Deployment</h2>
+         <a href="https://owlto.finance/deploy/?chain=MonadTestnet" target="_blank">🛠️ Owlto Contract Deployment</a>
+         <a href="https://remix.ethereum.org/" target="_blank">🔗 Remix Ethereum IDE</a>
+ 
+         <!-- Solidity Code -->
+         <h2>📜 Sample Solidity Contract</h2>
+         <pre id="solidity-code">
+ // SPDX-License-Identifier: MIT
+ pragma solidity ^0.8.20;
+ 
+ contract MyContract {
+     string public message;
+ 
+     constructor(string memory _message) {
+         message = _message;
+     }
+ 
+     function setMessage(string memory _newMessage) public {
+         message = _newMessage;
+     }
+ }
+ 
+ //key - "Hello Monad!"
+         </pre>
+         <button class="copy-btn" onclick="copyCode()">📋 Copy Code</button>
+ 
+         <!-- Monad Ecosystem -->
+         <h2>🌎 Monad Ecosystem</h2>
+         <a href="https://www.monad.xyz/ecosystem" target="_blank">🔗 Explore Monad Ecosystem</a>
+         
+         <p style="text-align: center; margin-top: 20px;">🚀 Start your Monad TestNet journey now!</p>
+ 
+     </div>
+ 
+     <script>
+         // Dark mode toggle function
+         function toggleDarkMode() {
+             const body = document.body;
+             const container = document.querySelector('.container');
+             const darkModeToggleButton = document.querySelector('.dark-mode-toggle');
+             body.classList.toggle('dark-mode');
+             container.classList.toggle('dark-mode');
+             darkModeToggleButton.classList.toggle('dark-mode');
+             document.querySelectorAll('a').forEach((link) => link.classList.toggle('dark-mode'));
+             document.querySelectorAll('h1, h2').forEach((heading) => heading.classList.toggle('dark-mode'));
+         }
+
+         function copyCode() {
+             const codeBlock = document.getElementById("solidity-code");
+             const textArea = document.createElement("textarea");
+             textArea.value = codeBlock.innerText;
+             document.body.appendChild(textArea);
+             textArea.select();
+             document.execCommand("copy");
+             document.body.removeChild(textArea);
+             alert("Code copied to clipboard! ✅");
+         }
+         
+     </script>
+
+ </body>
+</html>
